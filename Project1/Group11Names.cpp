@@ -20,6 +20,8 @@ int main(void)
 	al_flip_display();
 	al_draw_text(font2, al_map_rgb(255, 0, 255), 50, 90, 0, "Mtambo Sibonelo");
 	al_flip_display();
+	al_draw_text(font2, al_map_rgb(255, 0, 255), 50, 100, 0, "Mandisa Mabaso");
+	al_flip_display();
 	al_rest(5.0);
 	return 0;
 }
