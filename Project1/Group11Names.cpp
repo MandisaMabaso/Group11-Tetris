@@ -11,7 +11,7 @@ int main(void)
 
 	al_init_font_addon();
 	al_init_ttf_addon();
-
+	//
 	ALLEGRO_FONT *font2 = al_load_font("Arimo-Bold.ttf", 20, 0);
 	al_clear_to_color(al_map_rgb(0, 0, 0));
 	al_draw_text(font2, al_map_rgb(255, 0, 255),50,50,0, "Perfect M. Madondo");
