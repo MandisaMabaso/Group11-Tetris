@@ -11,6 +11,7 @@ int main(void)
 	if (!al_init())
 	{
 		al_show_native_message_box(NULL, NULL, NULL, "Could not initialise allegro 5", NULL, NULL);
+
 		return -1;
 	}
 
