@@ -29,9 +29,9 @@ int main(void)
 	al_init_font_addon();
 	al_init_ttf_addon();
 
-	ALLEGRO_FONT *font = al_load_font("Orbitron Light.tff", 36, NULL);
+	ALLEGRO_FONT *font = al_load_font("Orbitron Light.ttf", 36, NULL);
 
-	al_draw_text(font, al_map_rgb(44, 117, 255), ScreenWidth / 2, ScreenHeight / 2, ALLEGRO_ALIGN_LEFT, "Mandisa");
+	al_draw_text(font, al_map_rgb(44, 117, 255), ScreenWidth / 2, ScreenHeight / 2, ALLEGRO_ALIGN_LEFT, "Mandisi");
 
 	al_flip_display();
 	al_rest(10.0);
