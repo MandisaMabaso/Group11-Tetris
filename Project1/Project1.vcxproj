@@ -70,6 +70,9 @@
   <ItemGroup>
     <ClCompile Include="Group11Names.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="orbitron-black.ttf" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
