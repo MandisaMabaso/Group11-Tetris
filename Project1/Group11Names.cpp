@@ -2,11 +2,12 @@
 #include <allegro5\allegro_font.h>
 #include <allegro5\allegro_ttf.h>
 #include <allegro5\allegro_native_dialog.h>
+#include<iostream>
+using namespace std;
 #define ScreenWidth  800
 #define ScreenHeight 600
 
-
-int main(void)
+int main()
 {
 	if (!al_init())
 	{
@@ -38,8 +39,43 @@ int main(void)
 	al_destroy_font(font);
 	al_destroy_display(display);
 
-	return 0;
+	// Part 4 of the game: Displaying game over on the screen 
 
+	int screenHeight;
+	int rows;
+	cout << "Please enter the screen height and the last row" << endl;
+	cin >> screenHeight;
+	cin >> rows;
+	if (screenHeight == rows)
+	{
+		ALLEGRO_DISPLAY *displayGameOverMessage = NULL;
+		if (!al_init())
+		{
+			al_show_native_message_box(NULL, NULL, NULL, "Failed to initialize allegro 5", NULL, NULL);
+			return -1;
+		}
+		al_set_new_display_flags(ALLEGRO_WINDOWED);
+		displayGameOverMessage = al_create_display(480, 340);
+		al_set_window_position(displayGameOverMessage, 100, 200);
+		al_set_window_title(displayGameOverMessage, "Tetris");
+
+		if (!displayGameOverMessage)
+		{
+			al_show_native_message_box(NULL, NULL, NULL, "Failed to initialize display", NULL, NULL);
+			return -1;
+		}
+		al_init_font_addon();
+		al_init_ttf_addon();
+
+		ALLEGRO_FONT *font40 = al_load_font("alex-brush.ttf", 40, NULL);
+		al_draw_text(font40, al_map_rgb(117, 234, 255), 240, 170, ALLEGRO_ALIGN_CENTER, "GAME OVER");
+
+		al_flip_display();
+		al_rest(10.0);
+		al_destroy_font(font40);
+		al_destroy_display(displayGameOverMessage);
+		return 0;
+	}
 	// platform dimensions definition for the game
 #define gridHeight 16     // rows
 #define gridWidth 10      //columns
@@ -71,3 +107,4 @@ int main(void)
 	};
 
 }
+
